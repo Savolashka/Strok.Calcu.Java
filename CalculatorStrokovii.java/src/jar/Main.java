@@ -19,13 +19,11 @@ class Main {
 
         if (exp.contains(" + ")) {
             num = exp.split(" \\+ ");
-            //if (!num[0].contains("\"")) throw new Exception("Первым аргументом должна быть строка");
             printText(num[0] + num[1]);
         }
         else if (exp.contains(" * ")) {
             num = exp.split(" \\* ");
             if (num[1].contains("\"")) throw new Exception("Строку можно умножать или делить только на число");
-            //if (!num[0].contains("\"")) throw new Exception("Первым аргументом должна быть строка");
             int mult = Integer.parseInt(num[1]);
             String result = "";
             for (int i = 0; i < mult; i++) {
@@ -36,7 +34,6 @@ class Main {
         else if (exp.contains(" / ")) {
             num = exp.split(" / ");
             if (num[1].contains("\"")) throw new Exception("Строку можно умножать или делить только на число");
-            //if (!num[0].contains("\"")) throw new Exception("Первым аргументом должна быть строка");
             int newLen = num[0].length() / Integer.parseInt(num[1]);
             String result = num[0].substring(0, newLen);
             if (newLen>10 || newLen<1) throw new Exception("Число может быть от 1 до 10");
@@ -44,7 +41,6 @@ class Main {
         }
         else if (exp.contains(" - ")) {
             num = exp.split(" - ");
-            //if (!num[0].contains("\"")) throw new Exception("Первым аргументом должна быть строка");
             num[1] = num[1].replace("\"", "");
             int index = num[0].indexOf(num[1]);
             if(index == -1){
